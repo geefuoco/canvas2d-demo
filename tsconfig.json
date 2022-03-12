@@ -11,7 +11,8 @@
   "forceConsistentCasingInFileNames": true,
   "jsx": "react",
   "strict": true,
-  "skipLibCheck": true
+  "skipLibCheck": true,
+  "noImplicitAny": true
  },
  "include": [
   "src/**/*"
