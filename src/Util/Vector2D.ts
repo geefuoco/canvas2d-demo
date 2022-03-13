@@ -59,6 +59,12 @@ export default class Vector2D {
     return this;
   }
 
+  divide(scalar: number): Vector2D {
+    this.x /= scalar;
+    this.y /= scalar;
+    return this;
+  }
+
   normalize(): Vector2D {
     this.x /= this.magnitude;
     this.y /= this.magnitude;
