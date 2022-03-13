@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Line from "../../Util/Line";
 import Vector2D from "../../Util/Vector2D";
 import RayVehicle from "../../Util/RayVehicle";
+import { Link } from "react-router-dom";
 import "./RaycastCanvas.css";
 
 interface Props {
@@ -92,7 +93,6 @@ const RaycastCanvas: React.FC<Props> = ({ height, width }) => {
         window.addEventListener("resize", handleResize);
 
         return () => {
-          cancelAnimationFrame(animationId);
           window.removeEventListener("resize", handleResize);
         };
       }
@@ -111,20 +111,25 @@ const RaycastCanvas: React.FC<Props> = ({ height, width }) => {
         current.addEventListener("mousemove", handleMouseMove);
 
         return () => {
+          cancelAnimationFrame(animationId);
           current.removeEventListener("mousemove", handleMouseMove);
         };
       }
     }
   }, [xOffset, yOffset]);
   return (
-    <div className="canvas-container">
-      <canvas
-        data-testid="canvas"
-        ref={canvasRef}
-        width={`${width}px`}
-        height={`${height}px`}
-      ></canvas>
-    </div>
+    <>
+      <Link to="/">Home</Link>
+      <Link to="/randomwalk">Random Walk</Link>
+      <div className="canvas-container">
+        <canvas
+          data-testid="raycast-canvas"
+          ref={canvasRef}
+          width={`${width}px`}
+          height={`${height}px`}
+        ></canvas>
+      </div>
+    </>
   );
 };
 
