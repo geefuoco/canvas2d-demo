@@ -9,3 +9,6 @@
   box-sizing: border-box;
 }
   
+:root{
+  font-family: "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
