@@ -1,0 +1,16 @@
+.home{
+  padding: 1rem;
+}
+
+.title{
+  font-size: 2rem;
+}
+
+.description{
+  font-size: 1.5rem;
+}
+
+.home-links{
+  display: flex;
+  flex-wrap: wrap;
+}
