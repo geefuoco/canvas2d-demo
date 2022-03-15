@@ -16,6 +16,13 @@ export default class Vector2D {
     return new Vector2D(Math.cos(angle), Math.sin(angle));
   }
 
+  static subtract(vector: Vector2D, vector2: Vector2D): Vector2D {
+    return new Vector2D(
+      vector.getX() - vector2.getX(),
+      vector.getY() - vector2.getY()
+    );
+  }
+
   getX(): number {
     return this.x;
   }
@@ -78,5 +85,11 @@ export default class Vector2D {
   angleBetween(vector: Vector2D): number {
     const value = this.dot(vector);
     return Math.acos((value / this.magnitude) * vector.getMagnitude());
+  }
+
+  limit(scalar: number) {
+    if (this.magnitude > scalar) {
+      this.setMagnitude(scalar);
+    }
   }
 }
