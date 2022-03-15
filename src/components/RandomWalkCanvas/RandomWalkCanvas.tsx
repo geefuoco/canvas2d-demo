@@ -2,14 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Rectangle from "../../Util/Rectangle";
 import Vector2D from "../../Util/Vector2D";
+import { CanvasProps } from "../canvasProps";
 import "./RandomWalkCanvas.css";
 
-interface Props {
-  height: number;
-  width: number;
-}
-
-const RandomWalkCanvas: React.FC<Props> = ({ height, width }) => {
+const RandomWalkCanvas: React.FC<CanvasProps> = ({ height, width }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   let animationId: number;
   let mover: Rectangle;
@@ -50,6 +46,7 @@ const RandomWalkCanvas: React.FC<Props> = ({ height, width }) => {
   return (
     <>
       <Link to="/raycast">Raycast</Link>
+      <Link to="/steer">Steer</Link>
       <div className="canvas-container">
         <canvas
           ref={canvasRef}

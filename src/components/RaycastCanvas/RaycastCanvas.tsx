@@ -4,13 +4,9 @@ import Vector2D from "../../Util/Vector2D";
 import RayVehicle from "../../Util/RayVehicle";
 import { Link } from "react-router-dom";
 import "./RaycastCanvas.css";
+import { CanvasProps } from "../canvasProps";
 
-interface Props {
-  height: number;
-  width: number;
-}
-
-const RaycastCanvas: React.FC<Props> = ({ height, width }) => {
+const RaycastCanvas: React.FC<CanvasProps> = ({ height, width }) => {
   const [xOffset, setX] = useState<number>(0);
   const [yOffset, setY] = useState<number>(0);
   const [vehicle, setVehicle] = useState<RayVehicle>();

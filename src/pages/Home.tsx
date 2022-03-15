@@ -13,6 +13,8 @@ const Home: React.FC = () => {
 
       <div className="home-links">
         <Link to="/raycast">Raycasting</Link>
+        <Link to="/randomwalk">Random Walk</Link>
+        <Link to="/steer">Steering Vehicle</Link>
       </div>
     </section>
   );
